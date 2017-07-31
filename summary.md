@@ -104,7 +104,7 @@ ex25.py
 
 - 解题思路
 
-	- [研究答案中没有分析过的行，找出它们的来龙去脉]()
+	- [研究答案中没有分析过的行，找出它们的来龙去脉](https://github.com/tickhcj/studydrills/blob/master/Ex25.md)
 
 	- 在mystuff目录下进入python交互模式，这样才能读取ex25.py(如果要同时调取不同路径下的文件该如何呢）
 
