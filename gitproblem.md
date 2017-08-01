@@ -12,7 +12,7 @@
 
 - 文件用英文方式命名，使用中文命名，在命令行`git status`时文件名显示为一长串的编码，后续操作很不方便
 
-## 使用SSH连接GitHub
+## Git常用命令
 
 - [下载安装git](https://git-scm.com/downloads)
 
@@ -104,4 +104,24 @@
 		$ git reset --hard HEAD^	 # 回退到目前版本的前一个版本
 		$ git reset --hard commit_id # 在版本的历史之间穿梭
 		$ git reflog	# 查看命令历史
-		$ git checkout -- file	# 丢弃
+		$ git checkout -- file	# 丢弃工作区的修改，让文件回到最近一次commit或add是的状态
+		$ git reset HEAD file # 丢弃暂存区的修改
+		$ git rm file # 删除文件
+
+### 通过ssh加密实现本地Git仓库和GitHub仓库之间的传输
+
+- 在用户主目录下（/c/Users/Administrator），看看有木有.ssh目录，再看看目录下有木有`id_rsa`（私钥，自个使用）和`id_rsa.pub`（公钥，谁都可以知道）这两个文件。如果没有打开Git Bash，创建SSH Key：
+
+		$ ssh-keygen -t rsa -C "youremail@example.com"
+
+	一路回车，使用默认值即可。
+
+- 登录GitHub，点击头像，打开"Setthings"->"SSH and GPG keys"->点"New SSH key"
+
+	- "Title"添入备注
+	- "Key"把公钥的内容写入(Ctrl C + Ctrl V)
+	- 点"Add SSH kye"添加完成
+
+	把需要同步的电脑生成的Key添加到GitHub，就可以在每天电脑上往GitHub推送了
+
+- 
